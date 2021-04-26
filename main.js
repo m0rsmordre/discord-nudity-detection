@@ -66,9 +66,9 @@ client.login(ayarlar.TOKEN);
 
 function get_data(link) {
     return new Promise(async function(resolve, reject) {
-        await deepai.callStandardApi("nsfw-detector", {
+        resolve(await deepai.callStandardApi("nsfw-detector", {
             image: link,
-        }).then((res) => resolve(res));
+        }));
     })
 }
 
